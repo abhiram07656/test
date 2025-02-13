@@ -2,32 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no">
   <title>Touch and Mouse Event Example</title>
   <style>
+
     body {
-      margin: 0;
+      margin: 0px;
       overflow: hidden;
       height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
       background-color: black;
     }
 
     .movable {
+      margin: 0;
       position: absolute;
       width: 130px;
       height: 200px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
+      touch-action: none;
     }
 
     #div1 {
       position: absolute;
-      top: 49.2px;
-      left: 62.8px;
+      top: 86.112px;
+      left: 14.26px;
       width: 500px;
       height: 480px;
       border-radius: 10px;
@@ -77,14 +79,14 @@
     #div7 {
       position: absolute;
       top: 356.388px;
-      left: 440.163PX;
+      right: 0px;
       background-color: white;
     }
     
     #div8 {
       position: absolute;
       top: 357.988px;
-      left:49.8PX;
+      left: 0px;
       background-color: white;
     }
     
@@ -103,31 +105,31 @@
     #div11 {
       position: absolute;
       top: 29.0875px;
-      left:315.062PX;
+      left: 270.062PX;
       background-color: white;
     }
     #div12 {
       position: absolute;
       top: 31.5875px;
-      left: 184.2PX;
+      left: 135.2PX;
       background-color: white;
     }
     #div13 {
       position: absolute;
       top: 33.3625px;
-      left: 446.825PX;
+      right: 0px;
       background-color: white;
     }
     #div14 {
       position: absolute;
       top:32.325px;
-      left: 49.5875PX;
+      left: 0px;
       background-color: white;
     }
     #div15 {
       position: absolute;
       top: 79.55px;
-      left: 408.163PX;
+      right: 0px;
       background-color: white;
     }
     #div16 {
@@ -151,7 +153,7 @@
     #div19 {
       position: absolute;
       top: 210.762px;
-      left: 439.388PX;
+      right: 0px;
       background-color: white;
     }
     #div20 {
@@ -180,90 +182,148 @@
       left: 5px;
       top: 170px;
       font-size: 12px;
-   
+    }
+
+    .contt {
+      top: -50px;
+      position: absolute;
+      height: 580px;
+      width: 530px;
+      background-color: transparent;
+      transform: scale(0.7);
+    }
+
+    .tngg {
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-top: 125px solid rgba(15, 142, 142, 0.452);
+      border-left: 188px solid transparent;
+      border-right: 188px solid transparent;
+      filter: drop-shadow(0px 0px 20px cyan);
+      transition: 1s;
+      bottom: 11%;
+      z-index: 0;
+
+    }
+
+    .tiggh {
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-top: 90px solid rgba(45, 12, 12, 0.405);
+      border-left: 140px solid transparent;
+      border-right: 140px solid transparent;
+      filter: drop-shadow(0px 0px 1px black);
+      transition: 1s;
+      bottom: 16.5%;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ext {
+      position: absolute;
+      bottom: 5%;
+      background-color: red;
+      height: 50px;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
 <body>
+<div class="contt">
   <div id="div1" class="movable" style="z-index: 1">
-    <img id="img1" src="jas.jpg" height="420px" width="480px">
-    
+    <img id="img1" src="jas.jpg" height="420px" width="480px"> 
   </div>
   <div id="div2" class="movable"style="z-index: 2">    
     <img id="img2" src="jas2.jpg" height="160x" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div3" class="movable"style="z-index: 3">
     <img id="img3" src="jas3.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div4" class="movable"style="z-index: 4">
     <img id="img4" src="jas4.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div5" class="movable"style="z-index: 5">
     <img id="img5" src="jas5.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div6" class="movable"style="z-index: 6">
     <img id="img6" src="jas6.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div7" class="movable"style="z-index: 7">
     <img id="img7" src="jas7.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div8" class="movable"style="z-index: 8">
     <img id="img8" src="jas8.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div9" class="movable"style="z-index: 9">
     <img id="img9" src="jas9.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div10" class="movable"style="z-index: 10">
     <img id="img10" src="jas10.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div11" class="movable"style="z-index: 11">
     <img id="img11" src="jas11.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div12" class="movable"style="z-index: 12">
     <img id="img12" src="jas12.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div13" class="movable"style="z-index: 13">
     <img id="img13" src="jas13.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div14" class="movable"style="z-index: 14">
     <img id="img14" src="jas14.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div><div id="div15" class="movable"style="z-index: 15">
     <img id="img15" src="jas15.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div><div id="div16" class="movable"style="z-index: 16">
     <img id="img16" src="jas16.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div><div id="div17" class="movable"style="z-index: 17">
     <img id="img17" src="jas17.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div><div id="div18" class="movable"style="z-index: 18">
     <img id="img18" src="jas18.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div><div id="div19" class="movable"style="z-index: 19">
     <img id="img19" src="jas19.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div20" class="movable"style="z-index: 20">
     <img id="img20" src="jas20.jpg" height="160px" width="120px">
-    <h1>BE MINE❤️🥰</h1>
+    <h1>MINE❤️🥰</h1>
   </div>
   <div id="div21" class="movable"style="z-index: 21">
-  <img id="img21" src="jas.jpg" height="160px" width="120px">
-  <h1>BE MINE❤️🥰</h1>
+    <img id="img21" src="jas.jpg" height="160px" width="120px">
+   <h1>MINE❤️🥰</h1>
+  </div>
 </div>
+<div class="tngg"></div>
+<div class="tiggh"></div>
+<div class="ext">OPEN</div>
 
   <script>
     let activeElement = null;
@@ -299,6 +359,10 @@
     function handleEnd() {
       activeElement = null;
     }
+
+    document.addEventListener("gesturestart",function(event){
+      event.preventDefault();
+    })
 
     document.addEventListener("touchstart", handleStart);
     document.addEventListener("touchmove", handleMove);
