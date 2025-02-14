@@ -23,7 +23,7 @@
       border-radius: 10px;
       display: flex;
       justify-content: center;
-      visibility: hidden;
+      touch-action: none;
     }
 
     #div1 {
@@ -36,8 +36,6 @@
       display: flex;
       justify-content: center;
       background-color: white;
-      display: block;
-    
       img {
       position: absolute;
       top: 10px;
@@ -168,6 +166,7 @@
       position: absolute;
       top: 187.537px;
       left:238.775PX;
+      
       background-color: white;
     }
 
@@ -183,6 +182,15 @@
       left: 5px;
       top: 170px;
       font-size: 12px;
+    }
+
+    .contt {
+      top: -50px;
+      position: absolute;
+      height: 580px;
+      width: 530px;
+      background-color: transparent;
+      transform: scale(0.7);
     }
 
     .tngg {
@@ -325,27 +333,28 @@
 <div class="tiggh"></div>
 <div class="ext">OPEN</div>
 
-<script>
-  let activeElement = null;
-  let offset = { x: 0, y: 0 };
-  let zindexhigher = 21; // Initialize z-index for stacking order
+  <script>
+    let activeElement = null;
+    let offset = { x: 0, y: 0 };
+    
+    let btn = document.querySelector(".movable")
 
-  // Start event handler
-  function handleStart(event) {
-      activeElement = event.target.closest('.movable');
+    // Start event handler
+    function handleStart(event) {
+      activeElement = event.target.closest('.movable'); 
       const point = event.touches ? event.touches[0] : event;
       const rect = activeElement.getBoundingClientRect();
       offset.x = point.clientX - rect.left;
       offset.y = point.clientY - rect.top;
       zindexhigher++;
-      activeElement.style.zIndex = zindexhigher; // Move the clicked element to the front
-  }
+      element.style.zindex=zindexhigher;
+    }
 
-  // Move event handler
-  function handleMove(event) {
+    // Move event handler
+    function handleMove(event) {
       if (!activeElement) return;
 
-      const point = event.touches ? event.touches[0] : event;
+      const point = event.touches ? event.touches[0] : event; 
       const x = point.clientX - offset.x;
       const y = point.clientY - offset.y;
 
@@ -353,33 +362,26 @@
       activeElement.style.top = `${y}px`;
 
       event.preventDefault();
-  }
+    }
 
-  function handleEnd() {
+    function handleEnd() {
       activeElement = null;
-  }
+    }
 
-  // Add touch and mouse event listeners for moving elements
-  document.addEventListener("touchstart", handleStart);
-  document.addEventListener("touchmove", handleMove);
-  document.addEventListener("touchend", handleEnd);
+    document.addEventListener("gesturestart",function(event){
+      event.preventDefault();
+    })
 
-  document.addEventListener("mousedown", handleStart);
-  document.addEventListener("mousemove", handleMove);
-  document.addEventListener("mouseup", handleEnd);
+    document.addEventListener("touchstart", handleStart);
+    document.addEventListener("touchmove", handleMove);
+    document.addEventListener("touchend", handleEnd);
+    
 
-  document.querySelector('.ext').addEventListener('click', function() {
-    const movableElements = document.querySelectorAll('.movable');
-    let isVisible = movableElements[0].style.visibility === 'visible' || movableElements[0].style.visibility === '';
-
-    movableElements.forEach(element => {
-        element.style.visibility = isVisible ? 'hidden' : 'visible';
-    });
-
-    this.textContent = isVisible ? 'OPEN' : 'CLOSE';
-});
+    document.addEventListener("mousedown", handleStart);
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("mouseup", handleEnd);
 
 
-</script>
+  </script>
 </body>
 </html>
