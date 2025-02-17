@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no">
-  <title>Touch and Mouse Event Example</title>
+  <title>THE IS FOR YOU MY CRUSH❤️</title>
   <style>
 
     body {
@@ -23,7 +23,7 @@
       border-radius: 10px;
       display: flex;
       justify-content: center;
-      visibility: visible;
+      visibility: hidden;
       transform: scale(0.7);
     }
 
@@ -189,7 +189,7 @@
       font-size: 12px;
     }
 
-    .tngg {
+    #tngg {
       position: absolute;
       height: 0px;
       width: 0px;
@@ -197,42 +197,121 @@
       border-top-right-radius: 50px;
       border-bottom-right-radius: 50px;
       border-top: 210px solid white;
-      border-left: 220px solid transparent;
-      border-right: 220px solid transparent;
+      border-left: 180px solid transparent;
+      border-right: 180px solid transparent;
       filter: drop-shadow(0px 0px 20px rgb(255, 255, 255));
-      top: 60%;
+      top: 70%;
       z-index: 0;
-      visibility: visible;
-
+      visibility: hidden;
     }
 
-    .tiggh {
+    #tiggh {
       position: absolute;
       height: 0px;
       width: 0px;
       border-top-left-radius: 50px;
       border-top-right-radius: 50px;
-      border-top: 30px solid silver;
-      border-left: 200px solid transparent;
-      border-right: 200px solid transparent;
+      border-top: 30px solid rgb(146, 143, 143);
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
       filter: drop-shadow(0px 0px 1px white);
-      top: 60%;
+      top: 70%;
       z-index: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      visibility: visible;
+      visibility: hidden;
     }
+    
+    
+@keyframes tngg {
+  0% {
+    opacity: 0;
+    border-top: 10px solid white;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+  }
+  100% {
+    opacity: 1;
+    border-top: 210px solid white;
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+  }
+}
 
-    .ext {
-      position: absolute;
-      bottom: 3%;
-      background-color: red;
-      height: 50px;
+@keyframes tiggh {
+  0% {
+    opacity: 0;
+    border-top: 10px solid silver;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+  }
+  100% {
+    opacity: 1;
+    border-top: 30px solid silver;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+  }
+}
+
+.surya {
+  opacity: 1;
+  animation: tiggh 0.5s linear forwards;
+}
+
+.reverse-surya {
+  opacity: 0;
+  animation: tiggh 0.5s linear reverse forwards;
+}
+
+.hello {
+  opacity: 1;
+  animation: tngg 0.5s linear forwards;
+}
+
+.reverse-hello {
+  opacity: 0;
+  animation: tngg 0.5s linear reverse forwards;
+}
+   
+
+    .box {
       width: 150px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: white;
+      font-size: 18px;
+      border-radius: 5px;
+      position: absolute;
+      bottom: 5%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .ext {
+      width: 150px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+      color: white;
+      font-size: 18px;
+      border-radius: 5px;
+      position: absolute;
+      bottom: 5%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .open {
+      background-color: red;
+    }
+
+    .close {
+      background-color: green;
     }
 
   </style>
@@ -316,9 +395,9 @@
     <img id="img21" src="jas.jpg" height="160px" width="120px">
    <h1>MINE❤️🥰</h1>
   </div>
-<div class="tngg"></div>
-<div class="tiggh"></div>
-<div class="ext">OPEN</div>
+<div id="tngg"></div>
+<div id="tiggh"></div>
+<div id="toggleBox" class="box close">OPEN</div>
 <script>
   let activeElement = null;
   let offset = { x: 0, y: 0 };
@@ -361,27 +440,82 @@
   document.addEventListener("mousedown", handleStart);
   document.addEventListener("mousemove", handleMove);
   document.addEventListener("mouseup", handleEnd);
-
-  document.querySelector('.ext').addEventListener('click', function() {
+  document.querySelector('.box').addEventListener('click', function() {
     const movableElements = document.querySelectorAll('.movable');
-    const movableElements1 = document.querySelectorAll('.tngg');
-    const movableElements2 = document.querySelectorAll('.tiggh');
-    let isVisible = movableElements[0].style.visibility === 'visible' || movableElements[0].style.visibility === '';
+    const tigghElement = document.getElementById("tiggh");
+    const tnggElement = document.getElementById("tngg");
 
-    movableElements.forEach(element => {
-        element.style.visibility = isVisible ? 'hidden' : 'visible';
-    });
-    movableElements1.forEach(element => {
-        element.style.visibility = isVisible ? 'hidden' : 'visible';
-    });
-    movableElements2.forEach(element => {
-        element.style.visibility = isVisible ? 'hidden' : 'visible';
-    });
+    let isVisible = tigghElement.classList.contains("hello");
 
-    this.textContent = isVisible ? 'OPEN' : 'CLOSE';
+    if (isVisible) {
+        reverseAnimation1();
+        reverseAnimation2();
+    } else {
+        animation1();
+        animation2();
+    }
+
+    setTimeout(() => {
+        movableElements.forEach(element => {
+            element.style.visibility = isVisible ? 'hidden' : 'visible';
+        });
+
+        this.textContent = isVisible ? 'OPEN' : 'CLOSE';
+    }, 500);
+});
+
+function animation1() {
+    let element = document.getElementById("tiggh");
+    element.style.visibility = "visible";
+    element.classList.remove("reverse-hello");
+    void element.offsetWidth;
+    element.classList.add("hello");
+}
+
+function reverseAnimation1() {
+    let element = document.getElementById("tiggh");
+    element.classList.remove("hello");
+    void element.offsetWidth;
+    element.classList.add("reverse-hello");
+    setTimeout(() => {
+        element.style.visibility = "hidden";
+    }, 500);
+}
+
+function animation2() {
+    let element = document.getElementById("tngg");
+    element.style.visibility = "visible";
+    element.classList.remove("reverse-surya");
+    void element.offsetWidth;
+    element.classList.add("surya");
+}
+
+function reverseAnimation2() {
+    let element = document.getElementById("tngg");
+    element.classList.remove("surya");
+    void element.offsetWidth;
+    element.classList.add("reverse-surya");
+    setTimeout(() => {
+        element.style.visibility = "hidden";
+    }, 500);
+}
+
+const toggleBox = document.getElementById("toggleBox");
+
+toggleBox.addEventListener("click", function(){
+  if(toggleBox.classList.contains("close")){
+    toggleBox.classList.remove("close");
+    toggleBox.classList.add("open");
+    toggleBox.textContent = "CLOSE"
+  }
+  else{
+    toggleBox.classList.remove("open");
+    toggleBox.classList.add("close");
+    toggleBox.textContent = "OPEN"
+  }
 });
 
 
 </script>
 </body>
-</html>
+</html>s
