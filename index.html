@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no">
-  <title>THE IS FOR YOU MY CRUSH❤️</title>
+  <title>THIS IS FOR YOU❤️</title>
   <style>
 
     body {
@@ -227,6 +227,7 @@
 @keyframes tngg {
   0% {
     opacity: 0;
+    transform: translateY(208.024px);
     border-top: 10px solid white;
     border-left: 0px solid transparent;
     border-right: 0px solid transparent;
@@ -242,34 +243,36 @@
 @keyframes tiggh {
   0% {
     opacity: 0;
+    transform: translateY(200px);
     border-top: 10px solid silver;
     border-left: 0px solid transparent;
     border-right: 0px solid transparent;
   }
   100% {
     opacity: 1;
+    z-index: 1;
     border-top: 30px solid silver;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
   }
 }
 
-.surya {
+.abhi {
   opacity: 1;
   animation: tiggh 0.5s linear forwards;
 }
 
-.reverse-surya {
+.reverse-abhi {
   opacity: 0;
   animation: tiggh 0.5s linear reverse forwards;
 }
 
-.hello {
+.jasmin {
   opacity: 1;
   animation: tngg 0.5s linear forwards;
 }
 
-.reverse-hello {
+.reverse-jasmin {
   opacity: 0;
   animation: tngg 0.5s linear reverse forwards;
 }
@@ -307,11 +310,11 @@
     }
 
     .open {
-      background-color: red;
+      background-color:green ;
     }
 
     .close {
-      background-color: green;
+      background-color:red;
     }
 
   </style>
@@ -445,7 +448,7 @@
     const tigghElement = document.getElementById("tiggh");
     const tnggElement = document.getElementById("tngg");
 
-    let isVisible = tigghElement.classList.contains("hello");
+    let isVisible = tigghElement.classList.contains("jasmin");
 
     if (isVisible) {
         reverseAnimation1();
@@ -461,22 +464,22 @@
         });
 
         this.textContent = isVisible ? 'OPEN' : 'CLOSE';
-    }, 500);
+    }, 550);
 });
 
 function animation1() {
     let element = document.getElementById("tiggh");
     element.style.visibility = "visible";
-    element.classList.remove("reverse-hello");
+    element.classList.remove("reverse-jasmin");
     void element.offsetWidth;
-    element.classList.add("hello");
+    element.classList.add("jasmin");
 }
 
 function reverseAnimation1() {
     let element = document.getElementById("tiggh");
-    element.classList.remove("hello");
+    element.classList.remove("jasmin");
     void element.offsetWidth;
-    element.classList.add("reverse-hello");
+    element.classList.add("reverse-jasmin");
     setTimeout(() => {
         element.style.visibility = "hidden";
     }, 500);
@@ -485,16 +488,16 @@ function reverseAnimation1() {
 function animation2() {
     let element = document.getElementById("tngg");
     element.style.visibility = "visible";
-    element.classList.remove("reverse-surya");
+    element.classList.remove("reverse-abhi");
     void element.offsetWidth;
-    element.classList.add("surya");
+    element.classList.add("abhi");
 }
 
 function reverseAnimation2() {
     let element = document.getElementById("tngg");
-    element.classList.remove("surya");
+    element.classList.remove("abhi");
     void element.offsetWidth;
-    element.classList.add("reverse-surya");
+    element.classList.add("reverse-abhi");
     setTimeout(() => {
         element.style.visibility = "hidden";
     }, 500);
@@ -518,4 +521,4 @@ toggleBox.addEventListener("click", function(){
 
 </script>
 </body>
-</html>s
+</html>
